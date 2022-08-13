@@ -5,6 +5,7 @@ package org.abstractica.util.textui;/*
  */
 
 import java.io.Closeable;
+import java.util.Locale;
 
 /**
  *
@@ -19,6 +20,11 @@ public interface TextUI
     default void println(String s)
     {
         print(s + System.lineSeparator());
+    }
+
+    default void println()
+    {
+        print(System.lineSeparator());
     }
     
     default int getInteger()
@@ -81,5 +87,22 @@ public interface TextUI
         println(footer);
         print(">");
         return getInteger(1, count)-1;
+    }
+
+    default boolean getYesOrNo()
+    {
+        while(true)
+        {
+            String yesOrNo = get().toLowerCase();
+            if ("y".equals(yesOrNo) || "yes".equals(yesOrNo))
+            {
+                return true;
+            }
+            if ("n".equals(yesOrNo) || "no".equals(yesOrNo))
+            {
+                return false;
+            }
+            print("Please type yes or no: ");
+        }
     }
 }
