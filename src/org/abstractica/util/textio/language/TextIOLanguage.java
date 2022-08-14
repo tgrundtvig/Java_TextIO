@@ -1,7 +1,5 @@
 package org.abstractica.util.textio.language;
 
-import java.text.ParseException;
-
 public interface TextIOLanguage
 {
 	enum Language{ENGLISH, DANISH}

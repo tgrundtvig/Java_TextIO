@@ -47,11 +47,10 @@ public interface TextOut
 		for(String item : items)
 		{
 			print(preNumber);
-			print(Integer.toString(i));
+			print(Integer.toString(i++));
 			print(separator);
 			print(item);
 			print(postItem);
-			++i;
 		}
 		return items.length;
 	}

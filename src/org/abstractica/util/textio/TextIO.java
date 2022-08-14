@@ -20,10 +20,10 @@ public interface TextIO extends TextOut, TextIn
 
     //ToDo
     /*
-    int selectItems(String preList, Iterable<String> items, String postList);
-    int selectItems(String preList, String[] items, String postList);
-    int selectItems(int min, int max, String preList, Iterable<String> items, String postList);
-    int selectItems(int min, int max, String preList, String[] items, String postList);
+    int[] selectMultipleItems(String preList, Iterable<String> items, String postList);
+    int[] selectMultipleItems(String preList, String[] items, String postList);
+    int[] selectMultipleItems(int min, int max, String preList, Iterable<String> items, String postList);
+    int[] selectMultipleItems(int min, int max, String preList, String[] items, String postList);
     */
 
 }
