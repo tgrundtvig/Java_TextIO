@@ -13,7 +13,7 @@ public interface TextOut
 		print(s + newLine());
 	}
 
-	default void makeList(String[] items, String begin, String separator, String end)
+	default int makeList(String[] items, String begin, String separator, String end)
 	{
 		print(begin);
 		boolean first = true;
@@ -27,8 +27,32 @@ public interface TextOut
 			{
 				print(separator);
 			}
+			print(item);
 		}
 		print(end);
+		return items.length;
+	}
+
+	default int makeList(Iterable<String> items, String begin, String separator, String end)
+	{
+		int count = 0;
+		print(begin);
+		boolean first = true;
+		for(String item : items)
+		{
+			if(first)
+			{
+				first = false;
+			}
+			else
+			{
+				print(separator);
+			}
+			print(item);
+			++count;
+		}
+		print(end);
+		return count;
 	}
 
 	default int numberedlist(String[] items)

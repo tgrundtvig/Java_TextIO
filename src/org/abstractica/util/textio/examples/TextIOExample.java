@@ -1,8 +1,10 @@
-package org.abstractica.util.textio.example;
+package org.abstractica.util.textio.examples;
 
 import org.abstractica.util.textio.TextIO;
 import org.abstractica.util.textio.TextIOFactory;
 import org.abstractica.util.textio.language.TextIOLanguage;
+
+import java.util.ArrayList;
 
 public class TextIOExample
 {
@@ -26,5 +28,12 @@ public class TextIOExample
 		String[] choices = {"Green", "Red", "Blue", "Yellow"};
 		int choice = textIO.selectItem("What is your favorite color?", choices, "Please choose: ");
 		textIO.println("I like " + choices[choice].toLowerCase() + " too :-)");
+
+		ArrayList<String> list = new ArrayList<>();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("D");
+		textIO.makeList(list, "(", ", ", ")");
 	}
 }
