@@ -1,12 +1,12 @@
-package org.abstractica.util.textui;
+package org.abstractica.util.textio;
 
 import java.util.Scanner;
 
-public class SysOut implements TextUI
+public class SysOut implements TextIO
 {
 	private final static Scanner keyboard = new Scanner(System.in);
 
-	public static TextUI newTextUI()
+	public static TextIO newTextUI()
 	{
 		return new SysOut();
 	}

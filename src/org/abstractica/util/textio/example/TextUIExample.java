@@ -1,15 +1,13 @@
-package org.abstractica.util.textui.example;
+package org.abstractica.util.textio.example;
 
-import org.abstractica.util.textui.SysOut;
-import org.abstractica.util.textui.TextUI;
-
-import java.util.Locale;
+import org.abstractica.util.textio.SysOut;
+import org.abstractica.util.textio.TextIO;
 
 public class TextUIExample
 {
 	public static void main(String[] args)
 	{
-		TextUI textUI = SysOut.newTextUI();
+		TextIO textUI = SysOut.newTextUI();
 
 		textUI.println("Hello text UI!");
 		textUI.print("Enter a number: ");

@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="TextUI">
     <output-path>$PROJECT_DIR$/out</output-path>
     <root id="archive" name="TextUI.jar">
-      <element id="module-output" name="Java_TextUI" />
+      <element id="module-output" name="Java_TextIO" />
     </root>
   </artifact>
 </component>

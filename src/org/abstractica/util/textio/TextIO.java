@@ -1,17 +1,14 @@
-package org.abstractica.util.textui;/*
+package org.abstractica.util.textio;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import java.io.Closeable;
-import java.util.Locale;
-
 /**
  *
  * @author Tobias Grundtvig
  */
-public interface TextUI
+public interface TextIO
 {
     void print(String s);
     String get();

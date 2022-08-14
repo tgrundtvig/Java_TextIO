@@ -1,2 +1,3 @@
 # Java_TextIO
-A simple abstract text based user interface.
+An interface to abstract text input and output.
+Makes it easy to redirect text input and output for java applications and provides some utility functions.
