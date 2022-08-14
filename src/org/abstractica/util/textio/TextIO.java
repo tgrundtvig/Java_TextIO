@@ -8,98 +8,22 @@ package org.abstractica.util.textio;/*
  *
  * @author Tobias Grundtvig
  */
-public interface TextIO
+public interface TextIO extends TextOut, TextIn
 {
-    void print(String s);
-    String get();
-    void clear();
-    
-    default void println(String s)
-    {
-        print(s + System.lineSeparator());
-    }
+    int getInteger();
+    int getInteger(int min, int max);
+    float getFloat();
+    float getFloat(float min, float max);
+    int selectItem(String preList, Iterable<String> items, String postList);
+    int selectItem(String preList, String[] items, String postList);
+    boolean getYesOrNo();
 
-    default void println()
-    {
-        print(System.lineSeparator());
-    }
-    
-    default int getInteger()
-    {
-        while(true)
-        {
-            String input = get();
-            try
-            {
-                return Integer.parseInt(input);
-            }
-            catch(NumberFormatException exp)
-            {
-                println("You must enter an integer!");
-                print(">");
-            }
-        }
-    }
-    
-    default int getInteger(int min, int max)
-    {
-        if(min > max)
-        {
-            throw new IllegalArgumentException("min > max, min: " + min + " max:" + max);
-        }
-        while(true)
-        {
-            int res = getInteger();
-            if(res >= min && res <= max)
-            {
-                return res;
-            }
-            println("You must enter an integer between " + min + " and " + max + ", both inclusive.");
-            print(">");
-            
-        }
-    }
-    
-    default int select(String header, Iterable<String> choices, String footer)
-    {
-        println(header);
-        int count = 0;
-        for(String s : choices)
-        {
-            println("    " + (++count) + " - " + s);
-        }
-        println(footer);
-        print(">");
-        return getInteger(1, count)-1;
-    }
+    //ToDo
+    /*
+    int selectItems(String preList, Iterable<String> items, String postList);
+    int selectItems(String preList, String[] items, String postList);
+    int selectItems(int min, int max, String preList, Iterable<String> items, String postList);
+    int selectItems(int min, int max, String preList, String[] items, String postList);
+    */
 
-    default int select(String header, String[] choices, String footer)
-    {
-        println(header);
-        int count = 0;
-        for(String s : choices)
-        {
-            println("    " + (++count) + " - " + s);
-        }
-        println(footer);
-        print(">");
-        return getInteger(1, count)-1;
-    }
-
-    default boolean getYesOrNo()
-    {
-        while(true)
-        {
-            String yesOrNo = get().toLowerCase();
-            if ("y".equals(yesOrNo) || "yes".equals(yesOrNo))
-            {
-                return true;
-            }
-            if ("n".equals(yesOrNo) || "no".equals(yesOrNo))
-            {
-                return false;
-            }
-            print("Please type yes or no: ");
-        }
-    }
 }
