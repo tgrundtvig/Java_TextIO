@@ -49,6 +49,12 @@ public class TextIOFactory
 		}
 
 		@Override
+		public TextIOLanguage.Language getLanguage()
+		{
+			return language.getLanguage();
+		}
+
+		@Override
 		public int getInteger()
 		{
 			while(true)

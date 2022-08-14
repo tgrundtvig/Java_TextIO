@@ -4,12 +4,15 @@ package org.abstractica.util.textio;/*
  * and open the template in the editor.
  */
 
+import org.abstractica.util.textio.language.TextIOLanguage;
+
 /**
  *
  * @author Tobias Grundtvig
  */
 public interface TextIO extends TextOut, TextIn
 {
+    TextIOLanguage.Language getLanguage();
     int getInteger();
     int getInteger(int min, int max);
     float getFloat();
